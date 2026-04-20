@@ -1,6 +1,7 @@
 import type { Dispatch, ReactNode } from 'react'
 import type { IntelligenceType, QuizAction, Scores } from '../types/quiz'
 import { getDominantIntelligence } from '../lib/utils'
+import ScoreBreakdown from './ScoreBreakdown'
 
 interface FinishScreenProps {
   dispatch: Dispatch<QuizAction>
@@ -86,6 +87,8 @@ export default function FinishScreen({
         <p className="text-sm mt-5 text-[#c8c8c8] tracking-wide">
           {resultText}
         </p>
+
+        <ScoreBreakdown scores={scores} />
       </div>
 
       <div className="w-full flex justify-end">
