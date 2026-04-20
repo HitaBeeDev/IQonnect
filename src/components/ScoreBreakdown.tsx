@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { questions } from '../data/questions'
 import { cn, getDominantIntelligence } from '../lib/utils'
 import type { IntelligenceType, Scores } from '../types/quiz'
@@ -37,6 +38,15 @@ const totalPossibleScore = questions.reduce((total, question) => {
 
 export default function ScoreBreakdown({ scores }: ScoreBreakdownProps) {
   const dominantIntelligence = getDominantIntelligence(scores)
+  const [animateBars, setAnimateBars] = useState(false)
+
+  useEffect(() => {
+    const animationFrame = requestAnimationFrame(() => {
+      setAnimateBars(true)
+    })
+
+    return () => cancelAnimationFrame(animationFrame)
+  }, [])
 
   return (
     <div className="mt-8 w-full rounded-xl border border-[#444648] bg-[#242628] p-4">
@@ -83,7 +93,7 @@ export default function ScoreBreakdown({ scores }: ScoreBreakdownProps) {
                       meta.accentClass,
                       isDominant ? 'brightness-110 shadow-[0_0_12px_rgba(255,255,255,0.12)]' : '',
                     )}
-                    style={{ width: `${percentage}%` }}
+                    style={{ width: animateBars ? `${percentage}%` : '0%' }}
                   />
                 </div>
               </div>

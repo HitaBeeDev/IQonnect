@@ -80,7 +80,7 @@ export default function FinishScreen({
           Your highest-performing intelligence type is
         </p>
 
-        <p className="mt-2 text-center text-base font-bold capitalize text-[#ff9d32] md:text-lg">
+        <p className="animate-fade-in mt-2 text-center text-base font-bold capitalize text-[#ff9d32] md:text-lg">
           {bestIntelligence}
         </p>
 
