@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
     "strict": true,
+    "ignoreDeprecations": "6.0",
     "target": "ESNext",
     "module": "ESNext",
     "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

@@ -1,4 +1,4 @@
-function Header() {
+export default function Header() {
   return (
     <header>
       <p className="mt-3 text-md text-[#FFFFFF] font-normal tracking-wide text-lg">
@@ -6,7 +6,5 @@ function Header() {
         Boldest Intelligence
       </p>
     </header>
-  );
+  )
 }
-
-export default Header;
