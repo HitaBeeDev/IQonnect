@@ -1,6 +1,6 @@
 import type { Question } from '../types/quiz'
 
-export const questions: Question[] = [
+export const questions = [
   {
     id: 1,
     question:
@@ -811,4 +811,4 @@ export const questions: Question[] = [
       },
     },
   },
-]
+] satisfies Question[]

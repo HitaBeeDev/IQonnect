@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import type { Dispatch } from 'react'
 import type { QuizAction } from '../types/quiz'
+import { formatTime } from '../lib/utils'
 
 interface TimerProps {
   dispatch: Dispatch<QuizAction>
@@ -8,9 +9,6 @@ interface TimerProps {
 }
 
 export default function Timer({ dispatch, secondsRemaining }: TimerProps) {
-  const minutes = Math.floor(secondsRemaining / 60)
-  const seconds = secondsRemaining % 60
-
   useEffect(() => {
     const id = setInterval(() => {
       dispatch({ type: 'tick' })
@@ -21,9 +19,7 @@ export default function Timer({ dispatch, secondsRemaining }: TimerProps) {
 
   return (
     <div className="text-xs font-medium mt-5 text-[#929292]">
-      Your Remaining Time : {minutes < 10 && '0'}
-      {minutes}: {seconds < 10 && '0'}
-      {seconds}
+      Your Remaining Time : {formatTime(secondsRemaining)}
     </div>
   )
 }

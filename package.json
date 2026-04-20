@@ -7,13 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --no-error-on-unmatched-pattern --max-warnings 0",
-    "preview": "vite preview",
-    "server": "json-server --watch data/questions.json --port 9000"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "json-server": "^1.0.0-beta.3",
+    "clsx": "^2.1.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

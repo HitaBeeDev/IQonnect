@@ -1,5 +1,6 @@
 import type { Dispatch, ReactNode } from 'react'
 import type { IntelligenceType, QuizAction, Scores } from '../types/quiz'
+import { getDominantIntelligence } from '../lib/utils'
 
 interface FinishScreenProps {
   dispatch: Dispatch<QuizAction>
@@ -63,10 +64,7 @@ export default function FinishScreen({
     ),
   }
 
-  const bestIntelligenceKey = (
-    Object.entries(scores) as [IntelligenceType, number][]
-  ).reduce((highest, current) => (highest[1] > current[1] ? highest : current))[0]
-
+  const bestIntelligenceKey = getDominantIntelligence(scores)
   const bestIntelligence = intelligenceMapping[bestIntelligenceKey]
   const resultText = resultTexts[bestIntelligenceKey]
 

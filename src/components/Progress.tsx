@@ -1,4 +1,5 @@
 import type { OptionKey } from '../types/quiz'
+import { calcProgressPercent } from '../lib/utils'
 
 interface ProgressProps {
   index: number
@@ -11,8 +12,11 @@ export default function Progress({
   numQuestions,
   answer,
 }: ProgressProps) {
-  const progressPercentage =
-    ((index + Number(answer !== null)) / numQuestions) * 100
+  const progressPercentage = calcProgressPercent(
+    index,
+    numQuestions,
+    answer !== null,
+  )
 
   return (
     <div className="w-full mt-4 flex flex-col justify-start items-start">
