@@ -14,10 +14,7 @@ export default function App() {
   const currentQuestion = questions[index]
 
   return (
-    <div
-      style={{ fontFamily: 'Montserrat, sans-serif' }}
-      className="flex h-screen items-center justify-center bg-[#1D1F21]"
-    >
+    <div className="flex h-screen items-center justify-center bg-[#1D1F21]">
       <div className="h-full w-full rounded-xl bg-[#2c2e30] p-10 shadow-lg md:h-[35rem] md:w-[40rem]">
         <Header />
 
