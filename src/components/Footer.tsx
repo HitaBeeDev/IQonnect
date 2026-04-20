@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-type FooterProps = {
+interface FooterProps {
   children: ReactNode
 }
 

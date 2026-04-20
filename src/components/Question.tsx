@@ -2,7 +2,7 @@ import type { Dispatch } from 'react'
 import type { OptionKey, Question as QuizQuestion, QuizAction } from '../types/quiz'
 import Options from './Options'
 
-type QuestionProps = {
+interface QuestionProps {
   question: QuizQuestion
   dispatch: Dispatch<QuizAction>
   answer: OptionKey | null

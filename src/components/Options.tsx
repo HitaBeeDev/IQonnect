@@ -6,7 +6,7 @@ import type {
   QuizOption,
 } from '../types/quiz'
 
-type OptionsProps = {
+interface OptionsProps {
   question: QuizQuestion
   dispatch: Dispatch<QuizAction>
   answer: OptionKey | null

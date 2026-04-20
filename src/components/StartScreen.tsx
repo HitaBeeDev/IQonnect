@@ -1,7 +1,7 @@
 import type { Dispatch } from 'react'
 import type { QuizAction } from '../types/quiz'
 
-type StartScreenProps = {
+interface StartScreenProps {
   numQuestions: number
   dispatch: Dispatch<QuizAction>
 }

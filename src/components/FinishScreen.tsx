@@ -1,7 +1,7 @@
 import type { Dispatch, ReactNode } from 'react'
 import type { IntelligenceType, QuizAction, Scores } from '../types/quiz'
 
-type FinishScreenProps = {
+interface FinishScreenProps {
   dispatch: Dispatch<QuizAction>
   scores: Scores
 }

@@ -1,7 +1,7 @@
 import type { Dispatch } from 'react'
 import type { OptionKey, QuizAction } from '../types/quiz'
 
-type NextButtonProps = {
+interface NextButtonProps {
   dispatch: Dispatch<QuizAction>
   answer: OptionKey | null
   index: number

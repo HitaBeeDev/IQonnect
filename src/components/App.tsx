@@ -1,12 +1,7 @@
 import { useEffect, useReducer } from 'react'
-import data from '../data/questions.json'
-import type {
-  IntelligenceType,
-  OptionKey,
-  Question as QuizQuestion,
-  QuizAction,
-  QuizState,
-} from '../types/quiz'
+import type { Reducer } from 'react'
+import { questions as quizQuestions } from '../data/questions'
+import type { QuizAction, QuizState } from '../types/quiz'
 import FinishScreen from './FinishScreen'
 import Footer from './Footer'
 import Header from './Header'
@@ -17,19 +12,6 @@ import StartScreen from './StartScreen'
 import Timer from './Timer'
 
 const SECS_PER_QUESTION = 20
-
-type RawQuestion = {
-  id: number
-  question: string
-  options: Record<
-    OptionKey,
-    {
-      text: string
-      intelligence: string
-      score: number
-    }
-  >
-}
 
 const initialState: QuizState = {
   questions: [],
@@ -44,24 +26,10 @@ const initialState: QuizState = {
   status: 'ready',
 }
 
-function normalizeQuestions(rawQuestions: RawQuestion[]): QuizQuestion[] {
-  return rawQuestions.map((question) => ({
-    ...question,
-    options: Object.fromEntries(
-      (Object.entries(question.options) as [OptionKey, RawQuestion['options'][OptionKey]][]).map(
-        ([key, option]) => [
-          key,
-          {
-            ...option,
-            intelligence: option.intelligence.toLowerCase() as IntelligenceType,
-          },
-        ],
-      ),
-    ) as QuizQuestion['options'],
-  }))
-}
-
-function reducer(state: QuizState, action: QuizAction): QuizState {
+const reducer: Reducer<QuizState, QuizAction> = (
+  state: QuizState,
+  action: QuizAction,
+): QuizState => {
   switch (action.type) {
     case 'dataReceived':
       return {
@@ -134,15 +102,14 @@ function reducer(state: QuizState, action: QuizAction): QuizState {
 
 export default function App() {
   const [{ questions, status, index, answer, secondsRemaining, scores }, dispatch] =
-    useReducer(reducer, initialState)
+    useReducer<Reducer<QuizState, QuizAction>>(reducer, initialState)
 
   const numQuestions = questions.length
   const currentQuestion = questions[index]
 
   useEffect(() => {
-    const normalizedQuestions = normalizeQuestions((data as { questions: RawQuestion[] }).questions)
-    dispatch({ type: 'dataReceived', payload: normalizedQuestions })
-  }, [])
+    dispatch({ type: 'dataReceived', payload: quizQuestions })
+  }, [dispatch])
 
   return (
     <div

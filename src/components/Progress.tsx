@@ -1,6 +1,6 @@
 import type { OptionKey } from '../types/quiz'
 
-type ProgressProps = {
+interface ProgressProps {
   index: number
   numQuestions: number
   answer: OptionKey | null

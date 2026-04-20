@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import type { Dispatch } from 'react'
 import type { QuizAction } from '../types/quiz'
 
-type TimerProps = {
+interface TimerProps {
   dispatch: Dispatch<QuizAction>
   secondsRemaining: number
 }
