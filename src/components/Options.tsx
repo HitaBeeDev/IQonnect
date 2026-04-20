@@ -15,11 +15,11 @@ interface OptionsProps {
 
 export default function Options({ question, dispatch, answer }: OptionsProps) {
   return (
-    <div className="mt-4 flex flex-col gap-3 w-full">
+    <div className="mt-4 flex w-full flex-col gap-3">
       {(Object.entries(question.options) as [OptionKey, QuizOption][]).map(([key, option]) => (
         <button
           className={cn(
-            'h-[4rem] w-full rounded-md border border-[#929292] p-2 text-sm leading-6 tracking-normal text-[#F5F5F5] md:h-[2.2rem] md:p-0',
+            'min-h-[2.75rem] w-full rounded-md border border-[#929292] px-3 py-2 text-left text-xs leading-5 tracking-normal text-[#F5F5F5] sm:text-sm md:text-center',
             answer === key ? 'bg-[#929292] text-[#1D1F21]' : '',
             answer !== null
               ? 'cursor-not-allowed opacity-60'

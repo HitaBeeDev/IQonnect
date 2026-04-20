@@ -11,8 +11,8 @@ export default function StartScreen({
   dispatch,
 }: StartScreenProps) {
   return (
-    <div className="">
-      <p className="mt-7 text-sm tracking-normal leading-6 text-[#F5F5F5]">
+    <div>
+      <p className="mt-4 text-sm leading-6 tracking-normal text-[#F5F5F5] md:mt-7">
         IQonnect is an engaging and insightful test app designed to reveal which
         type of intelligence shines brightest within you. Whether it&rsquo;s
         Intrapersonal, Logical, or Emotional Intelligence (EQ), IQonnect guides
@@ -22,31 +22,28 @@ export default function StartScreen({
         potential!
       </p>
 
-      <div className="flex flex-row justify-center items-center gap-7 text-[#e0e0e0] mt-8">
+      <div className="mt-8 flex flex-col items-center gap-3 text-[#e0e0e0] sm:flex-row sm:justify-center sm:gap-7">
         <p
-          className="w-48 text-xs font-normal h-8 rounded-md bg-[#444648]
-        text-center flex items-center justify-center"
+          className="flex h-11 w-full max-w-48 items-center justify-center rounded-md bg-[#444648] text-center text-xs font-normal"
         >
           Total Questions: {numQuestions}
         </p>
 
         <p
-          className="w-48 text-xs font-normal h-8 rounded-md bg-[#444648]
-        text-center flex items-center justify-center"
+          className="flex h-11 w-full max-w-48 items-center justify-center rounded-md bg-[#444648] text-center text-xs font-normal"
         >
           Duration: 10 Minutes
         </p>
       </div>
 
-      <p className="text-[#ff983f] text-xs font-medium mt-7">
+      <p className="mt-7 text-xs font-medium text-[#ff983f]">
         Note: You can select an option only once, and it cannot be changed.
         Additionally, please manage your time carefully.
       </p>
 
-      <div className="flex justify-end mt-[6rem]">
+      <div className="mt-10 flex justify-stretch sm:mt-14 sm:justify-end">
         <button
-          className="w-48 text-xs font-medium h-8 rounded-md bg-[#FF6600]
-        text-center flex items-center justify-center text-[#FFFFFF] hover:bg-[#fe7511] transition-all duration-500"
+          className="flex h-11 w-full items-center justify-center rounded-md bg-[#FF6600] text-center text-xs font-medium text-[#FFFFFF] transition-all duration-500 hover:bg-[#fe7511] sm:w-48"
           onClick={() => dispatch({ type: 'start' })}
         >
           Let’s Discover Together

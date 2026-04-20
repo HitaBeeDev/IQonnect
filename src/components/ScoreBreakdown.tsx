@@ -59,8 +59,8 @@ export default function ScoreBreakdown({ scores }: ScoreBreakdownProps) {
                   isDominant ? 'border-[#6a6d70] bg-[#2b2e31]' : '',
                 )}
               >
-                <div className="mb-2 flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2">
+                <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                  <div className="flex min-w-0 flex-wrap items-center gap-2">
                     <span className="text-sm font-medium text-[#f5f5f5]">
                       {meta.label}
                     </span>
@@ -71,7 +71,7 @@ export default function ScoreBreakdown({ scores }: ScoreBreakdownProps) {
                     ) : null}
                   </div>
 
-                  <span className="text-xs font-medium text-[#c8c8c8]">
+                  <span className="text-left text-xs font-medium text-[#c8c8c8] sm:text-right">
                     {percentage}% ({score}/{totalPossibleScore})
                   </span>
                 </div>

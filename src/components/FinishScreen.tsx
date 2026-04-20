@@ -70,31 +70,30 @@ export default function FinishScreen({
   const resultText = resultTexts[bestIntelligenceKey]
 
   return (
-    <div>
-      <h2 className="text-center mt-6 text-[#feffc2] font-semibold tracking-wide text-lg">
+    <div className="pb-1">
+      <h2 className="mt-3 text-center text-lg font-semibold tracking-wide text-[#feffc2] md:mt-6">
         Test Completed!
       </h2>
 
-      <div className="mt-10 flex flex-col items-center">
-        <p className="text-[0.8rem] md:text-lg text-[#e0e0e0]">
+      <div className="mt-6 flex flex-col items-center md:mt-10">
+        <p className="text-center text-[0.8rem] text-[#e0e0e0] md:text-lg">
           Your highest-performing intelligence type is
         </p>
 
-        <p className="text-[#ff9d32] mt-2 text-md md:text-lg font-bold capitalize">
+        <p className="mt-2 text-center text-base font-bold capitalize text-[#ff9d32] md:text-lg">
           {bestIntelligence}
         </p>
 
-        <p className="text-sm mt-5 text-[#c8c8c8] tracking-wide">
+        <p className="mt-5 text-sm leading-6 tracking-wide text-[#c8c8c8]">
           {resultText}
         </p>
 
         <ScoreBreakdown scores={scores} />
       </div>
 
-      <div className="w-full flex justify-end">
+      <div className="flex w-full justify-stretch sm:justify-end">
         <button
-          className="mt-10 w-44 text-xs font-medium h-8 rounded-md bg-[#FF6600]
-    text-center flex items-center justify-center text-[#FFFFFF] hover:bg-[#fe7511] transition-all duration-500"
+          className="mt-8 flex h-11 w-full items-center justify-center rounded-md bg-[#FF6600] text-center text-xs font-medium text-[#FFFFFF] transition-all duration-500 hover:bg-[#fe7511] sm:mt-10 sm:w-44"
           onClick={() => dispatch({ type: 'restart' })}
         >
           Restart Quiz

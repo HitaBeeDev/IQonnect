@@ -17,19 +17,17 @@ export default function NextButton({
   if (answer === null) return null
 
   return (
-    <div className="flex justify-end mt-9">
+    <div className="mt-9 flex justify-stretch sm:justify-end">
       {index < numQuestions - 1 ? (
         <button
-          className="w-20 text-xs font-medium h-8 rounded-md bg-[#FF6600]
-        text-center flex items-center justify-center text-[#FFFFFF] hover:bg-[#fe7511] transition-all duration-500"
+          className="flex h-11 w-full items-center justify-center rounded-md bg-[#FF6600] text-center text-xs font-medium text-[#FFFFFF] transition-all duration-500 hover:bg-[#fe7511] sm:w-20"
           onClick={() => dispatch({ type: 'nextQuestion' })}
         >
           Next
         </button>
       ) : (
         <button
-          className="w-20 text-xs font-medium h-8 rounded-md bg-[#FF6600]
-        text-center flex items-center justify-center text-[#FFFFFF] hover:bg-[#fe7511] transition-all duration-500"
+          className="flex h-11 w-full items-center justify-center rounded-md bg-[#FF6600] text-center text-xs font-medium text-[#FFFFFF] transition-all duration-500 hover:bg-[#fe7511] sm:w-20"
           onClick={() => dispatch({ type: 'finish' })}
         >
           Finish

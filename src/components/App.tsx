@@ -14,11 +14,11 @@ export default function App() {
   const currentQuestion = questions[index]
 
   return (
-    <div className="flex h-screen items-center justify-center bg-[#1D1F21]">
-      <div className="h-full w-full rounded-xl bg-[#2c2e30] p-10 shadow-lg md:h-[35rem] md:w-[40rem]">
+    <div className="flex min-h-screen items-start justify-center bg-[#1D1F21] px-3 py-4 md:items-center md:px-6 md:py-6">
+      <div className="flex min-h-[calc(100vh-2rem)] w-full max-w-[40rem] flex-col overflow-hidden rounded-xl bg-[#2c2e30] p-4 shadow-lg sm:p-6 md:h-[35rem] md:min-h-0 md:w-[40rem] md:p-10">
         <Header />
 
-        <div>
+        <div className="mt-4 flex-1 min-h-0 overflow-y-auto pr-1">
           {status === 'ready' && (
             <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
           )}
