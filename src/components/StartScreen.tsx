@@ -70,7 +70,7 @@ export default function StartScreen({ numQuestions }: StartScreenProps) {
           className="flex h-11 w-full items-center justify-center rounded-md bg-[#FF6600] text-center text-xs font-medium text-[#FFFFFF] transition-all duration-500 hover:bg-[#fe7511] focus-visible:ring-2 focus-visible:ring-[#FF6600] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2c2e30] sm:w-48"
           onClick={() => dispatch({ type: 'start' })}
         >
-          Let's Discover Together
+          Let&apos;s Discover Together
         </button>
       </div>
     </div>

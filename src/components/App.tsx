@@ -1,5 +1,5 @@
 import ActiveQuizScreen from './ActiveQuizScreen'
-import { QuizDispatchProvider } from '../hooks/useQuizDispatch'
+import QuizDispatchProvider from './QuizDispatchProvider'
 import { useQuiz } from '../hooks/useQuiz'
 import FinishScreen from './FinishScreen'
 import Header from './Header'

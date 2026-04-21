@@ -2,6 +2,9 @@ import { useEffect } from 'react'
 import { useQuizDispatch } from '../hooks/useQuizDispatch'
 import { cn } from '../lib/utils'
 
+const TIMER_WARNING_SECS = 30
+const TIMER_CRITICAL_SECS = 10
+
 interface TimerProps {
   secondsRemaining: number
   formattedTime: string | null
@@ -20,8 +23,8 @@ export default function Timer({
     return () => clearInterval(id)
   }, [dispatch])
 
-  const isWarning = secondsRemaining <= 30
-  const isUrgent = secondsRemaining <= 10
+  const isWarning = secondsRemaining <= TIMER_WARNING_SECS
+  const isUrgent = secondsRemaining <= TIMER_CRITICAL_SECS
 
   return (
     <div
