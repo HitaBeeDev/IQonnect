@@ -10,8 +10,8 @@ Answer 15 scenario-based questions and find out whether you lead with Logical, E
 
 | Metric | Score |
 |---|---|
-| Lighthouse Performance | 99 |
-| Accessibility | 96 |
+| Lighthouse Performance | 98 |
+| Accessibility | 94 |
 | SEO | 100 |
 
 ## Features
