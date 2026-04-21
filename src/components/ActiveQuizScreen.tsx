@@ -11,6 +11,9 @@ interface ActiveQuizScreenProps {
   index: number
   numQuestions: number
   secondsRemaining: number
+  progressPercent: number
+  formattedTime: string | null
+  isLastQuestion: boolean
 }
 
 export default function ActiveQuizScreen({
@@ -19,10 +22,17 @@ export default function ActiveQuizScreen({
   index,
   numQuestions,
   secondsRemaining,
+  progressPercent,
+  formattedTime,
+  isLastQuestion,
 }: ActiveQuizScreenProps) {
   return (
     <>
-      <Progress index={index} numQuestions={numQuestions} answer={answer} />
+      <Progress
+        index={index}
+        numQuestions={numQuestions}
+        progressPercent={progressPercent}
+      />
 
       <Question
         question={question}
@@ -32,13 +42,15 @@ export default function ActiveQuizScreen({
       />
 
       <Footer>
-        <Timer secondsRemaining={secondsRemaining} />
+        <Timer
+          secondsRemaining={secondsRemaining}
+          formattedTime={formattedTime}
+        />
       </Footer>
 
       <NextButton
         answer={answer}
-        numQuestions={numQuestions}
-        index={index}
+        isLastQuestion={isLastQuestion}
       />
     </>
   )

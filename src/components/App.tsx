@@ -6,7 +6,20 @@ import Header from './Header'
 import StartScreen from './StartScreen'
 
 export default function App() {
-  const { questions, status, index, answer, secondsRemaining, scores, numQuestions, dispatch } =
+  const {
+    questions,
+    status,
+    index,
+    answer,
+    secondsRemaining,
+    scores,
+    numQuestions,
+    progressPercent,
+    formattedTime,
+    dominantIntelligence,
+    isLastQuestion,
+    dispatch,
+  } =
     useQuiz()
   const currentQuestion = questions[index]
 
@@ -28,11 +41,17 @@ export default function App() {
                 index={index}
                 numQuestions={numQuestions}
                 secondsRemaining={secondsRemaining}
+                progressPercent={progressPercent}
+                formattedTime={formattedTime}
+                isLastQuestion={isLastQuestion}
               />
             )}
 
             {status === 'finished' && (
-              <FinishScreen scores={scores} />
+              <FinishScreen
+                scores={scores}
+                dominantIntelligence={dominantIntelligence}
+              />
             )}
           </main>
         </QuizDispatchProvider>

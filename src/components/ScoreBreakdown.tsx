@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
 import { intelligenceMeta, totalPossibleScore } from '../data/scoreBreakdown'
-import { cn, getDominantIntelligence } from '../lib/utils'
+import { cn } from '../lib/utils'
 import type { IntelligenceType, Scores } from '../types/quiz'
 
 interface ScoreBreakdownProps {
   scores: Scores
+  dominantIntelligence: IntelligenceType
 }
 
-export default function ScoreBreakdown({ scores }: ScoreBreakdownProps) {
-  const dominantIntelligence = getDominantIntelligence(scores)
+export default function ScoreBreakdown({
+  scores,
+  dominantIntelligence,
+}: ScoreBreakdownProps) {
   const [animateBars, setAnimateBars] = useState(false)
 
   useEffect(() => {

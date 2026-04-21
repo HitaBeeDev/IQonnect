@@ -1,18 +1,20 @@
 import { PartyPopper } from 'lucide-react'
 import { results } from '../data/results'
 import { useQuizDispatch } from '../hooks/useQuizDispatch'
-import type { Scores } from '../types/quiz'
-import { getDominantIntelligence } from '../lib/utils'
+import type { IntelligenceType, Scores } from '../types/quiz'
 import ScoreBreakdown from './ScoreBreakdown'
 
 interface FinishScreenProps {
   scores: Scores
+  dominantIntelligence: IntelligenceType
 }
 
-export default function FinishScreen({ scores }: FinishScreenProps) {
+export default function FinishScreen({
+  scores,
+  dominantIntelligence,
+}: FinishScreenProps) {
   const dispatch = useQuizDispatch()
-  const bestIntelligenceKey = getDominantIntelligence(scores)
-  const result = results[bestIntelligenceKey]
+  const result = results[dominantIntelligence]
 
   return (
     <div className="pb-1">
@@ -37,7 +39,10 @@ export default function FinishScreen({ scores }: FinishScreenProps) {
           {result.label}
         </p>
 
-        <ScoreBreakdown scores={scores} />
+        <ScoreBreakdown
+          scores={scores}
+          dominantIntelligence={dominantIntelligence}
+        />
 
         <p className="mt-6 text-[0.92rem] leading-7 tracking-wide text-[#c8c8c8]">
           {result.description}

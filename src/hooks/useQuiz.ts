@@ -1,6 +1,11 @@
 import { useEffect, useReducer } from 'react'
 import type { Reducer } from 'react'
 import { questions as quizQuestions } from '../data/questions'
+import {
+  calcProgressPercent,
+  formatTime,
+  getDominantIntelligence,
+} from '../lib/utils'
 import type { QuizAction, QuizState } from '../types/quiz'
 
 export const SECS_PER_QUESTION = 40
@@ -98,6 +103,11 @@ export function useQuiz() {
     useReducer<Reducer<QuizState, QuizAction>>(reducer, initialState)
 
   const numQuestions = questions.length
+  const progressPercent = calcProgressPercent(index, numQuestions, answer !== null)
+  const formattedTime =
+    secondsRemaining === null ? null : formatTime(secondsRemaining)
+  const dominantIntelligence = getDominantIntelligence(scores)
+  const isLastQuestion = index === numQuestions - 1
 
   useEffect(() => {
     dispatch({ type: 'dataReceived', payload: quizQuestions })
@@ -111,6 +121,10 @@ export function useQuiz() {
     secondsRemaining,
     scores,
     numQuestions,
+    progressPercent,
+    formattedTime,
+    dominantIntelligence,
+    isLastQuestion,
     dispatch,
   }
 }

@@ -4,14 +4,12 @@ import type { OptionKey } from '../types/quiz'
 
 interface NextButtonProps {
   answer: OptionKey | null
-  index: number
-  numQuestions: number
+  isLastQuestion: boolean
 }
 
 export default function NextButton({
   answer,
-  index,
-  numQuestions,
+  isLastQuestion,
 }: NextButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const dispatch = useQuizDispatch()
@@ -29,7 +27,7 @@ export default function NextButton({
 
   return (
     <div className="mt-9 flex justify-stretch sm:justify-end">
-      {index < numQuestions - 1 ? (
+      {!isLastQuestion ? (
         <button
           ref={buttonRef}
           className={btnClass}
