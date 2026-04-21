@@ -1,40 +1,11 @@
 import { useEffect, useState } from 'react'
-import { questions } from '../data/questions'
+import { intelligenceMeta, totalPossibleScore } from '../data/scoreBreakdown'
 import { cn, getDominantIntelligence } from '../lib/utils'
 import type { IntelligenceType, Scores } from '../types/quiz'
 
 interface ScoreBreakdownProps {
   scores: Scores
 }
-
-const intelligenceMeta: Record<
-  IntelligenceType,
-  { label: string; accentClass: string; trackClass: string }
-> = {
-  logical: {
-    label: 'Logical',
-    accentClass: 'bg-[#ff9d32] text-[#ffe2c2]',
-    trackClass: 'bg-[#4a3420]',
-  },
-  emotional: {
-    label: 'Emotional',
-    accentClass: 'bg-[#59c3c3] text-[#d9ffff]',
-    trackClass: 'bg-[#1d4c4c]',
-  },
-  intrapersonal: {
-    label: 'Intrapersonal',
-    accentClass: 'bg-[#9ad05d] text-[#efffdc]',
-    trackClass: 'bg-[#33461c]',
-  },
-}
-
-const totalPossibleScore = questions.reduce((total, question) => {
-  const maxQuestionScore = Math.max(
-    ...Object.values(question.options).map((option) => option.score),
-  )
-
-  return total + maxQuestionScore
-}, 0)
 
 export default function ScoreBreakdown({ scores }: ScoreBreakdownProps) {
   const dominantIntelligence = getDominantIntelligence(scores)

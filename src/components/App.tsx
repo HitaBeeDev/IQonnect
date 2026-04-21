@@ -1,12 +1,8 @@
+import ActiveQuizScreen from './ActiveQuizScreen'
 import { useQuiz } from '../hooks/useQuiz'
 import FinishScreen from './FinishScreen'
-import Footer from './Footer'
 import Header from './Header'
-import NextButton from './NextButton'
-import Progress from './Progress'
-import Question from './Question'
 import StartScreen from './StartScreen'
-import Timer from './Timer'
 
 export default function App() {
   const { questions, status, index, answer, secondsRemaining, scores, numQuestions, dispatch } =
@@ -24,35 +20,14 @@ export default function App() {
           )}
 
           {status === 'active' && currentQuestion && secondsRemaining !== null && (
-            <>
-              <Progress
-                index={index}
-                numQuestions={numQuestions}
-                answer={answer}
-              />
-
-              <Question
-                question={currentQuestion}
-                dispatch={dispatch}
-                answer={answer}
-                index={index}
-                numQuestions={numQuestions}
-              />
-
-              <Footer>
-                <Timer
-                  dispatch={dispatch}
-                  secondsRemaining={secondsRemaining}
-                />
-              </Footer>
-
-              <NextButton
-                dispatch={dispatch}
-                answer={answer}
-                numQuestions={numQuestions}
-                index={index}
-              />
-            </>
+            <ActiveQuizScreen
+              question={currentQuestion}
+              dispatch={dispatch}
+              answer={answer}
+              index={index}
+              numQuestions={numQuestions}
+              secondsRemaining={secondsRemaining}
+            />
           )}
 
           {status === 'finished' && (

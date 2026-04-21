@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
 import type { Dispatch } from 'react'
-import { Brain, Clock3, Lightbulb, Sigma, UserRoundSearch } from 'lucide-react'
+import { Lightbulb } from 'lucide-react'
+import { intelligenceTypes, startScreenIntro, startScreenNote } from '../data/startScreen'
 import { SECS_PER_QUESTION } from '../hooks/useQuiz'
 import type { QuizAction } from '../types/quiz'
+import StartScreenStats from './StartScreenStats'
 
 interface StartScreenProps {
   numQuestions: number
@@ -20,63 +22,17 @@ export default function StartScreen({
   }, [])
 
   const durationMinutes = Math.ceil((numQuestions * SECS_PER_QUESTION) / 60)
-  const intelligenceTypes = [
-    {
-      icon: Sigma,
-      label: 'Logical',
-      description: 'Patterns, numbers, and sharp reasoning.',
-    },
-    {
-      icon: Lightbulb,
-      label: 'Emotional',
-      description: 'Empathy, social awareness, and intuition.',
-    },
-    {
-      icon: UserRoundSearch,
-      label: 'Intrapersonal',
-      description: 'Self-reflection, insight, and inner clarity.',
-    },
-  ]
 
   return (
     <div>
       <p className="mt-4 text-sm leading-6 tracking-normal text-[#F5F5F5] md:mt-7">
-        IQonnect is an engaging and insightful test app designed to reveal which
-        type of intelligence shines brightest within you. Whether it&rsquo;s
-        Intrapersonal, Logical, or Emotional Intelligence (EQ), IQonnect guides
-        you through thought-provoking questions to help you understand your
-        mental strengths and how they shape your thinking, problem-solving, and
-        interactions. Discover your unique cognitive edge and unlock your full
-        potential!
+        {startScreenIntro}
       </p>
 
-      <div className="mt-8 grid gap-3 text-[#e0e0e0] sm:grid-cols-2">
-        <div className="flex min-h-[3.5rem] items-center gap-3 rounded-xl border border-[#4a4d51] bg-[#343638] px-4 py-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#FF6600]/15 text-[#FF6600]">
-            <Brain size={18} />
-          </div>
-          <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.16em] text-[#969696]">
-              Total Questions
-            </p>
-            <p className="text-sm font-medium text-[#F5F5F5]">{numQuestions}</p>
-          </div>
-        </div>
-
-        <div className="flex min-h-[3.5rem] items-center gap-3 rounded-xl border border-[#4a4d51] bg-[#343638] px-4 py-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#FF6600]/15 text-[#FF6600]">
-            <Clock3 size={18} />
-          </div>
-          <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.16em] text-[#969696]">
-              Duration
-            </p>
-            <p className="text-sm font-medium text-[#F5F5F5]">
-              {durationMinutes} Minutes
-            </p>
-          </div>
-        </div>
-      </div>
+      <StartScreenStats
+        numQuestions={numQuestions}
+        durationMinutes={durationMinutes}
+      />
 
       <div className="mt-7 rounded-xl border border-[#444648] bg-[#2a2c2e] p-4">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#feffc2]">
@@ -108,8 +64,7 @@ export default function StartScreen({
           <Lightbulb size={16} />
         </div>
         <p className="text-xs font-medium leading-5">
-          You can select an option only once, and it cannot be changed.
-          Additionally, please manage your time carefully.
+          {startScreenNote}
         </p>
       </div>
 
