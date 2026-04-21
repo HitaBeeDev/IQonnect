@@ -1,0 +1,69 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="110" y1="40" x2="1080" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B1F15"/>
+      <stop offset="0.45" stop-color="#1D1F21"/>
+      <stop offset="1" stop-color="#121315"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="268" y1="104" x2="948" y2="542" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#36393B"/>
+      <stop offset="1" stop-color="#26282B"/>
+    </linearGradient>
+    <linearGradient id="progress" x1="0" y1="0" x2="236" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6600"/>
+      <stop offset="1" stop-color="#FF9D32"/>
+    </linearGradient>
+    <filter id="shadow" x="215" y="71" width="770" height="488" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="22"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0196078 0 0 0 0 0.0235294 0 0 0 0 0.0313726 0 0 0 0.4 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1060" cy="120" r="164" fill="#FF6600" fill-opacity="0.08"/>
+  <circle cx="162" cy="538" r="218" fill="#FEFFC2" fill-opacity="0.06"/>
+
+  <text x="112" y="132" fill="#FF6600" font-family="Montserrat, Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="0.14em">IQ</text>
+  <text x="169" y="132" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="0.08em">onnect</text>
+  <text x="112" y="176" fill="#969696" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="500">Discover Your Intelligence Type</text>
+
+  <text x="112" y="294" fill="#F5F5F5" font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="700">Timed quiz.</text>
+  <text x="112" y="370" fill="#F5F5F5" font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="700">Clear result.</text>
+  <text x="112" y="446" fill="#F5F5F5" font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="700">Sharper self-insight.</text>
+
+  <text x="112" y="518" fill="#C8C8C8" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="500">Logical, Emotional, and Intrapersonal intelligence in one polished assessment.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="259" y="97" width="682" height="400" rx="28" fill="url(#panel)"/>
+    <rect x="259" y="97" width="682" height="400" rx="28" stroke="#444648"/>
+
+    <text x="309" y="157" fill="#FF6600" font-family="Montserrat, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="0.14em">IQ</text>
+    <text x="353" y="157" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="0.08em">onnect</text>
+    <text x="309" y="189" fill="#969696" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="500">Uncover Your Boldest Intelligence</text>
+    <rect x="309" y="211" width="582" height="1" fill="#444648"/>
+
+    <rect x="309" y="243" width="380" height="12" rx="6" fill="#1D1F21"/>
+    <rect x="309" y="243" width="236" height="12" rx="6" fill="url(#progress)"/>
+    <text x="309" y="281" fill="#969696" font-family="Montserrat, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.16em">QUESTION 9 / 30</text>
+
+    <text x="309" y="331" fill="#F5F5F5" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="600">When solving a difficult problem, what</text>
+    <text x="309" y="367" fill="#F5F5F5" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="600">guides you most?</text>
+
+    <rect x="309" y="399" width="582" height="54" rx="12" fill="#444648"/>
+    <circle cx="341" cy="426" r="14" fill="#343638" stroke="#7C7F84"/>
+    <text x="336.5" y="431.5" fill="#D7D7D7" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="700">A</text>
+    <text x="369" y="431" fill="#F5F5F5" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="500">I trust logic, patterns, and evidence.</text>
+
+    <rect x="309" y="465" width="582" height="54" rx="12" fill="#929292"/>
+    <circle cx="341" cy="492" r="14" fill="#FF6600"/>
+    <path d="M335 492.5L339.5 497L347.5 487.5" stroke="#1D1F21" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="369" y="497" fill="#1D1F21" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="600">I read the people and emotions involved.</text>
+    <text x="819" y="497" fill="#1D1F21" font-family="Montserrat, Arial, sans-serif" font-size="16" font-weight="700">Selected</text>
+  </g>
+</svg>
