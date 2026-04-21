@@ -29,8 +29,6 @@ export default function ActiveQuizScreen({
   return (
     <>
       <Progress
-        index={index}
-        numQuestions={numQuestions}
         progressPercent={progressPercent}
       />
 

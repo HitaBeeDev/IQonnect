@@ -1,14 +1,8 @@
 interface ProgressProps {
-  index: number
-  numQuestions: number
   progressPercent: number
 }
 
-export default function Progress({
-  index,
-  numQuestions,
-  progressPercent,
-}: ProgressProps) {
+export default function Progress({ progressPercent }: ProgressProps) {
   return (
     <div className="mt-4 w-full">
       <div className="h-1 w-full overflow-hidden rounded-full bg-[#252538]">
@@ -22,9 +16,6 @@ export default function Progress({
           aria-label="Quiz progress"
         />
       </div>
-      <p className="mt-2 text-left text-xs text-[#5c5978]">
-        Question {index + 1} of {numQuestions}
-      </p>
     </div>
   )
 }
