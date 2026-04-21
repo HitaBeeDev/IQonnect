@@ -32,12 +32,12 @@ export default function Timer({
       aria-live={isWarning ? 'assertive' : 'polite'}
       aria-label={`Time remaining: ${formattedTime ?? '00:00'}`}
       className={cn(
-        'mt-5 text-xs font-medium text-[#969696] transition-colors duration-300',
-        isWarning ? 'text-[#ff9d32]' : '',
-        isUrgent ? 'animate-soft-pulse text-[#ff5c5c]' : '',
+        'mt-5 text-xs font-medium text-[#5c5978] transition-colors duration-300',
+        isWarning && !isUrgent ? 'text-[#f59e0b]' : '',
+        isUrgent ? 'animate-soft-pulse text-[#ef4444]' : '',
       )}
     >
-      Your Remaining Time : {formattedTime ?? '00:00'}
+      Time remaining — {formattedTime ?? '00:00'}
     </div>
   )
 }

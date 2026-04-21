@@ -29,51 +29,44 @@ export default function Options({
       </p>
 
       <ul
-        className="mt-4 flex w-full flex-col gap-3 list-none p-0"
+        className="mt-4 flex w-full flex-col gap-2.5 list-none p-0"
         role="list"
         aria-labelledby={labelledBy}
       >
-      {(Object.entries(question.options) as [OptionKey, QuizOption][]).map(([key, option]) => (
-        <li key={key}>
-          <button
-            className={cn(
-              'flex min-h-[2.75rem] w-full items-center gap-3 rounded-md border border-[#929292] px-3 py-2 text-left text-sm leading-6 tracking-normal text-[#F5F5F5] transition-all duration-500 focus-visible:ring-2 focus-visible:ring-[#FF6600] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2c2e30]',
-              answer === key
-                ? 'border-[#FF6600] bg-[#929292] text-[#1D1F21]'
-                : '',
-              answer !== null
-                ? 'cursor-not-allowed opacity-50'
-                : 'cursor-pointer hover:scale-[1.01] hover:bg-[#444648]',
-            )}
-            onClick={() => dispatch({ type: 'newAnswer', payload: key })}
-            disabled={answer !== null}
-          >
-            <span
+        {(Object.entries(question.options) as [OptionKey, QuizOption][]).map(([key, option]) => (
+          <li key={key}>
+            <button
               className={cn(
-                'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-semibold uppercase',
+                'flex min-h-[2.75rem] w-full items-center gap-3 rounded-xl border px-3 py-2.5 text-left text-sm leading-relaxed text-[#f0eeff] transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[#8b5cf6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f0f17]',
                 answer === key
-                  ? 'border-[#FF6600] bg-[#FF6600] text-[#1D1F21]'
-                  : 'border-[#7c7f84] bg-[#343638] text-[#d7d7d7]',
+                  ? 'border-[#8b5cf6] bg-[#1e1535]'
+                  : 'border-[#252538] bg-transparent',
+                answer !== null && answer !== key
+                  ? 'cursor-not-allowed opacity-40'
+                  : '',
+                answer === null
+                  ? 'cursor-pointer hover:border-[#38384f] hover:bg-[#161620]'
+                  : '',
               )}
-              aria-hidden="true"
+              onClick={() => dispatch({ type: 'newAnswer', payload: key })}
+              disabled={answer !== null}
             >
-              {answer === key ? (
-                <span className="text-sm">✓</span>
-              ) : (
-                key
-              )}
-            </span>
-
-            <span className="flex-1 text-left">{option.text}</span>
-
-            {answer === key ? (
-              <span className="text-xs font-semibold text-[#1D1F21]" aria-hidden="true">
-                Selected
+              <span
+                className={cn(
+                  'flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border text-[0.65rem] font-semibold uppercase',
+                  answer === key
+                    ? 'border-[#8b5cf6] bg-[#8b5cf6] text-white'
+                    : 'border-[#38384f] bg-[#161620] text-[#9490b0]',
+                )}
+                aria-hidden="true"
+              >
+                {answer === key ? '✓' : key}
               </span>
-            ) : null}
-          </button>
-        </li>
-      ))}
+
+              <span className="flex-1 text-left">{option.text}</span>
+            </button>
+          </li>
+        ))}
       </ul>
     </>
   )

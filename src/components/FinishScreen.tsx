@@ -1,4 +1,3 @@
-import { PartyPopper } from 'lucide-react'
 import { results } from '../data/results'
 import { useQuizDispatch } from '../hooks/useQuizDispatch'
 import type { IntelligenceType, Scores } from '../types/quiz'
@@ -17,48 +16,42 @@ export default function FinishScreen({
   const result = results[dominantIntelligence]
 
   return (
-    <div className="pb-1">
-      <div className="mt-3 flex items-center justify-center gap-2 text-[#feffc2] md:mt-6">
-        <PartyPopper size={18} />
-        <h2 className="text-center text-lg font-semibold tracking-wide">
-          Test Completed!
-        </h2>
+    <div className="flex flex-col gap-5 pb-1 pt-1">
+      <div className="flex justify-center">
+        <span className="rounded-full bg-[#8b5cf6]/10 px-3 py-1 text-[0.6rem] font-semibold uppercase tracking-widest text-[#8b5cf6]">
+          Quiz Complete
+        </span>
       </div>
 
       <div
-        className="mt-6 flex flex-col items-center md:mt-10"
         role="status"
         aria-live="polite"
         aria-atomic="true"
+        className="flex flex-col items-center gap-2 text-center"
       >
-        <p className="text-center text-[0.8rem] text-[#e0e0e0] md:text-lg">
-          Your highest-performing intelligence type is
-        </p>
-
-        <p className="animate-fade-in mt-2 text-center text-2xl font-bold capitalize leading-tight text-[#ff9d32] md:text-3xl">
+        <p className="text-xs text-[#5c5978]">Your dominant intelligence type</p>
+        <h2 className="animate-fade-in text-2xl font-bold text-[#c4b5fd] md:text-3xl">
           {result.label}
-        </p>
-
-        <ScoreBreakdown
-          scores={scores}
-          dominantIntelligence={dominantIntelligence}
-        />
-
-        <p className="mt-6 text-[0.92rem] leading-7 tracking-wide text-[#c8c8c8]">
-          {result.description}
-        </p>
+        </h2>
       </div>
 
-      <div className="mt-8 h-px w-full bg-[#444648] sm:mt-10" />
+      <p className="text-center text-sm leading-relaxed text-[#9490b0]">
+        {result.description}
+      </p>
 
-      <div className="flex w-full justify-start">
-        <button
-          className="mt-6 flex h-11 w-full items-center justify-center rounded-md bg-[#FF6600] text-center text-xs font-medium text-[#FFFFFF] transition-all duration-500 hover:bg-[#fe7511] focus-visible:ring-2 focus-visible:ring-[#FF6600] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2c2e30] sm:w-44"
-          onClick={() => dispatch({ type: 'restart' })}
-        >
-          Restart Quiz
-        </button>
-      </div>
+      <ScoreBreakdown
+        scores={scores}
+        dominantIntelligence={dominantIntelligence}
+      />
+
+      <div className="h-px w-full bg-[#252538]" />
+
+      <button
+        className="h-11 w-full rounded-xl bg-[#8b5cf6] text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#7c3aed] focus-visible:ring-2 focus-visible:ring-[#8b5cf6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f0f17] sm:w-44"
+        onClick={() => dispatch({ type: 'restart' })}
+      >
+        Restart Quiz
+      </button>
     </div>
   )
 }

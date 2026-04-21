@@ -18,13 +18,13 @@ export default function Question({
 
   return (
     <div className="mt-3 flex flex-col items-center justify-center">
-      <p className="w-full text-xs font-semibold uppercase tracking-[0.16em] text-[#969696]">
+      <p className="w-full text-[0.65rem] font-semibold uppercase tracking-widest text-[#5c5978]">
         Question {index + 1} / {numQuestions}
       </p>
 
       <p
         id={questionId}
-        className="mt-2 text-sm leading-6 tracking-normal text-[#F5F5F5] md:text-base"
+        className="mt-2 text-sm leading-relaxed text-[#f0eeff] md:text-base"
       >
         {question.question}
       </p>

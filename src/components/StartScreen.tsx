@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { Lightbulb } from 'lucide-react'
 import { intelligenceTypes, startScreenIntro, startScreenNote } from '../data/startScreen'
 import { useQuizDispatch } from '../hooks/useQuizDispatch'
 import { SECS_PER_QUESTION } from '../hooks/useQuiz'
@@ -20,8 +19,8 @@ export default function StartScreen({ numQuestions }: StartScreenProps) {
   const durationMinutes = Math.ceil((numQuestions * SECS_PER_QUESTION) / 60)
 
   return (
-    <div>
-      <p className="mt-4 text-sm leading-6 tracking-normal text-[#F5F5F5] md:mt-7">
+    <div className="flex flex-col gap-5 py-1">
+      <p className="text-sm leading-relaxed text-[#9490b0]">
         {startScreenIntro}
       </p>
 
@@ -30,49 +29,35 @@ export default function StartScreen({ numQuestions }: StartScreenProps) {
         durationMinutes={durationMinutes}
       />
 
-      <div className="mt-7 rounded-xl border border-[#444648] bg-[#2a2c2e] p-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#feffc2]">
+      <div className="rounded-xl bg-[#161620] p-4 ring-1 ring-[#252538]">
+        <p className="text-[0.65rem] font-semibold uppercase tracking-widest text-[#5c5978]">
           Intelligence Types
         </p>
 
-        <div className="mt-4 grid gap-3">
+        <div className="mt-3 space-y-3">
           {intelligenceTypes.map(({ icon: Icon, label, description }) => (
-            <div
-              key={label}
-              className="flex items-start gap-3 rounded-lg border border-[#3f4245] bg-[#303234] px-3 py-3"
-            >
-              <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#FF6600]/12 text-[#FF6600]">
-                <Icon size={16} />
+            <div key={label} className="flex items-center gap-3">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#8b5cf6]/10">
+                <Icon size={14} className="text-[#8b5cf6]" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-[#F5F5F5]">{label}</p>
-                <p className="mt-1 text-xs leading-5 text-[#b5b5b5]">
-                  {description}
-                </p>
+              <div className="flex min-w-0 flex-wrap items-baseline gap-x-2">
+                <span className="text-sm font-medium text-[#f0eeff]">{label}</span>
+                <span className="text-xs text-[#5c5978]">{description}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mt-7 flex items-start gap-3 rounded-lg border border-[#5a4325] bg-[#3a2d1f]/55 px-3 py-3 text-[#ffb15c]">
-        <div className="mt-0.5 shrink-0">
-          <Lightbulb size={16} />
-        </div>
-        <p className="text-xs font-medium leading-5">
-          {startScreenNote}
-        </p>
-      </div>
+      <p className="text-xs text-[#5c5978]">{startScreenNote}</p>
 
-      <div className="mt-10 flex justify-stretch sm:mt-14 sm:justify-end">
-        <button
-          ref={startButtonRef}
-          className="flex h-11 w-full items-center justify-center rounded-md bg-[#FF6600] text-center text-xs font-medium text-[#FFFFFF] transition-all duration-500 hover:bg-[#fe7511] focus-visible:ring-2 focus-visible:ring-[#FF6600] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2c2e30] sm:w-48"
-          onClick={() => dispatch({ type: 'start' })}
-        >
-          Let&apos;s Discover Together
-        </button>
-      </div>
+      <button
+        ref={startButtonRef}
+        className="h-11 w-full rounded-xl bg-[#8b5cf6] text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#7c3aed] focus-visible:ring-2 focus-visible:ring-[#8b5cf6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f0f17]"
+        onClick={() => dispatch({ type: 'start' })}
+      >
+        Begin Quiz
+      </button>
     </div>
   )
 }

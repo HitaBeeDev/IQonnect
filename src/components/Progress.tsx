@@ -10,20 +10,19 @@ export default function Progress({
   progressPercent,
 }: ProgressProps) {
   return (
-    <div className="w-full mt-4 flex flex-col justify-start items-start">
-      <div className="w-full bg-[#444648] rounded-full h-[0.6rem] overflow-hidden">
+    <div className="mt-4 w-full">
+      <div className="h-1 w-full overflow-hidden rounded-full bg-[#252538]">
         <div
-          className="h-full bg-[#FF6600]/70 transition-all duration-500 ease-in-out"
+          className="h-full rounded-full bg-[#8b5cf6]/70 transition-all duration-500 ease-in-out"
           style={{ width: `${progressPercent}%` }}
           role="progressbar"
-          aria-valuenow={progressPercent}
+          aria-valuenow={Math.round(progressPercent)}
           aria-valuemin={0}
           aria-valuemax={100}
           aria-label="Quiz progress"
-        ></div>
+        />
       </div>
-
-      <p className="mt-2 text-left text-xs text-[#969696]">
+      <p className="mt-2 text-left text-xs text-[#5c5978]">
         Question {index + 1} of {numQuestions}
       </p>
     </div>

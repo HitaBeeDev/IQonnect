@@ -7,18 +7,18 @@ export const intelligenceMeta: Record<
 > = {
   logical: {
     label: 'Logical',
-    accentClass: 'bg-[#ff9d32] text-[#ffe2c2]',
-    trackClass: 'bg-[#4a3420]',
+    accentClass: 'bg-[#8b5cf6]',
+    trackClass: 'bg-[#1c1c2e]',
   },
   emotional: {
     label: 'Emotional',
-    accentClass: 'bg-[#59c3c3] text-[#d9ffff]',
-    trackClass: 'bg-[#1d4c4c]',
+    accentClass: 'bg-[#a78bfa]',
+    trackClass: 'bg-[#1c1c2e]',
   },
   intrapersonal: {
     label: 'Intrapersonal',
-    accentClass: 'bg-[#9ad05d] text-[#efffdc]',
-    trackClass: 'bg-[#33461c]',
+    accentClass: 'bg-[#c4b5fd]',
+    trackClass: 'bg-[#1c1c2e]',
   },
 }
 
