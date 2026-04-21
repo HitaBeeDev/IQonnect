@@ -79,15 +79,17 @@ export default function FinishScreen({
         </h2>
       </div>
 
-      <div className="mt-6 flex flex-col items-center md:mt-10">
+      <div
+        className="mt-6 flex flex-col items-center md:mt-10"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <p className="text-center text-[0.8rem] text-[#e0e0e0] md:text-lg">
           Your highest-performing intelligence type is
         </p>
 
-        <p
-          className="animate-fade-in mt-2 text-center text-2xl font-bold capitalize leading-tight text-[#ff9d32] md:text-3xl"
-          aria-live="polite"
-        >
+        <p className="animate-fade-in mt-2 text-center text-2xl font-bold capitalize leading-tight text-[#ff9d32] md:text-3xl">
           {bestIntelligence}
         </p>
 

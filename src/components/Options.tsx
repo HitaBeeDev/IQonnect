@@ -11,11 +11,30 @@ interface OptionsProps {
   question: QuizQuestion
   dispatch: Dispatch<QuizAction>
   answer: OptionKey | null
+  labelledBy: string
 }
 
-export default function Options({ question, dispatch, answer }: OptionsProps) {
+export default function Options({
+  question,
+  dispatch,
+  answer,
+  labelledBy,
+}: OptionsProps) {
+  const selectedOptionText = answer === null ? null : question.options[answer].text
+
   return (
-    <ul className="mt-4 flex w-full flex-col gap-3 list-none p-0" role="list">
+    <>
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        {answer === null
+          ? ''
+          : `Selected option ${answer.toUpperCase()}: ${selectedOptionText}`}
+      </p>
+
+      <ul
+        className="mt-4 flex w-full flex-col gap-3 list-none p-0"
+        role="list"
+        aria-labelledby={labelledBy}
+      >
       {(Object.entries(question.options) as [OptionKey, QuizOption][]).map(([key, option]) => (
         <li key={key}>
           <button
@@ -57,6 +76,7 @@ export default function Options({ question, dispatch, answer }: OptionsProps) {
           </button>
         </li>
       ))}
-    </ul>
+      </ul>
+    </>
   )
 }
