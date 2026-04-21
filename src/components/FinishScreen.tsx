@@ -1,19 +1,16 @@
-import type { Dispatch } from 'react'
 import { PartyPopper } from 'lucide-react'
 import { results } from '../data/results'
-import type { QuizAction, Scores } from '../types/quiz'
+import { useQuizDispatch } from '../hooks/useQuizDispatch'
+import type { Scores } from '../types/quiz'
 import { getDominantIntelligence } from '../lib/utils'
 import ScoreBreakdown from './ScoreBreakdown'
 
 interface FinishScreenProps {
-  dispatch: Dispatch<QuizAction>
   scores: Scores
 }
 
-export default function FinishScreen({
-  dispatch,
-  scores,
-}: FinishScreenProps) {
+export default function FinishScreen({ scores }: FinishScreenProps) {
+  const dispatch = useQuizDispatch()
   const bestIntelligenceKey = getDominantIntelligence(scores)
   const result = results[bestIntelligenceKey]
 

@@ -1,21 +1,17 @@
 import { useEffect, useRef } from 'react'
-import type { Dispatch } from 'react'
 import { Lightbulb } from 'lucide-react'
 import { intelligenceTypes, startScreenIntro, startScreenNote } from '../data/startScreen'
+import { useQuizDispatch } from '../hooks/useQuizDispatch'
 import { SECS_PER_QUESTION } from '../hooks/useQuiz'
-import type { QuizAction } from '../types/quiz'
 import StartScreenStats from './StartScreenStats'
 
 interface StartScreenProps {
   numQuestions: number
-  dispatch: Dispatch<QuizAction>
 }
 
-export default function StartScreen({
-  numQuestions,
-  dispatch,
-}: StartScreenProps) {
+export default function StartScreen({ numQuestions }: StartScreenProps) {
   const startButtonRef = useRef<HTMLButtonElement>(null)
+  const dispatch = useQuizDispatch()
 
   useEffect(() => {
     startButtonRef.current?.focus()

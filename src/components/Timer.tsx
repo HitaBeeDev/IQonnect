@@ -1,15 +1,14 @@
 import { useEffect } from 'react'
-import type { Dispatch } from 'react'
-import type { QuizAction } from '../types/quiz'
+import { useQuizDispatch } from '../hooks/useQuizDispatch'
 import { cn } from '../lib/utils'
 import { formatTime } from '../lib/utils'
 
 interface TimerProps {
-  dispatch: Dispatch<QuizAction>
   secondsRemaining: number
 }
 
-export default function Timer({ dispatch, secondsRemaining }: TimerProps) {
+export default function Timer({ secondsRemaining }: TimerProps) {
+  const dispatch = useQuizDispatch()
   useEffect(() => {
     const id = setInterval(() => {
       dispatch({ type: 'tick' })

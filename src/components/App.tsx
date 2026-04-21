@@ -1,4 +1,5 @@
 import ActiveQuizScreen from './ActiveQuizScreen'
+import { QuizDispatchProvider } from '../hooks/useQuizDispatch'
 import { useQuiz } from '../hooks/useQuiz'
 import FinishScreen from './FinishScreen'
 import Header from './Header'
@@ -14,26 +15,27 @@ export default function App() {
       <div className="flex min-h-[calc(100vh-2rem)] w-full max-w-[40rem] flex-col overflow-hidden rounded-xl bg-[#2c2e30] p-4 shadow-lg sm:p-6 md:h-[35rem] md:min-h-0 md:w-[40rem] md:p-10">
         <Header />
 
-        <main className="mt-4 flex-1 min-h-0 overflow-y-auto pr-1">
-          {status === 'ready' && (
-            <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
-          )}
+        <QuizDispatchProvider dispatch={dispatch}>
+          <main className="mt-4 flex-1 min-h-0 overflow-y-auto pr-1">
+            {status === 'ready' && (
+              <StartScreen numQuestions={numQuestions} />
+            )}
 
-          {status === 'active' && currentQuestion && secondsRemaining !== null && (
-            <ActiveQuizScreen
-              question={currentQuestion}
-              dispatch={dispatch}
-              answer={answer}
-              index={index}
-              numQuestions={numQuestions}
-              secondsRemaining={secondsRemaining}
-            />
-          )}
+            {status === 'active' && currentQuestion && secondsRemaining !== null && (
+              <ActiveQuizScreen
+                question={currentQuestion}
+                answer={answer}
+                index={index}
+                numQuestions={numQuestions}
+                secondsRemaining={secondsRemaining}
+              />
+            )}
 
-          {status === 'finished' && (
-            <FinishScreen dispatch={dispatch} scores={scores} />
-          )}
-        </main>
+            {status === 'finished' && (
+              <FinishScreen scores={scores} />
+            )}
+          </main>
+        </QuizDispatchProvider>
       </div>
     </div>
   )

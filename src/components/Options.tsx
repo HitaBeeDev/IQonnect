@@ -1,25 +1,23 @@
-import type { Dispatch } from 'react'
+import { useQuizDispatch } from '../hooks/useQuizDispatch'
 import type {
   OptionKey,
   Question as QuizQuestion,
-  QuizAction,
   QuizOption,
 } from '../types/quiz'
 import { cn } from '../lib/utils'
 
 interface OptionsProps {
   question: QuizQuestion
-  dispatch: Dispatch<QuizAction>
   answer: OptionKey | null
   labelledBy: string
 }
 
 export default function Options({
   question,
-  dispatch,
   answer,
   labelledBy,
 }: OptionsProps) {
+  const dispatch = useQuizDispatch()
   const selectedOptionText = answer === null ? null : question.options[answer].text
 
   return (

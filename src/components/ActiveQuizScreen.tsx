@@ -1,14 +1,12 @@
-import type { Dispatch } from 'react'
 import Footer from './Footer'
 import NextButton from './NextButton'
 import Progress from './Progress'
 import Question from './Question'
 import Timer from './Timer'
-import type { OptionKey, Question as QuizQuestion, QuizAction } from '../types/quiz'
+import type { OptionKey, Question as QuizQuestion } from '../types/quiz'
 
 interface ActiveQuizScreenProps {
   question: QuizQuestion
-  dispatch: Dispatch<QuizAction>
   answer: OptionKey | null
   index: number
   numQuestions: number
@@ -17,7 +15,6 @@ interface ActiveQuizScreenProps {
 
 export default function ActiveQuizScreen({
   question,
-  dispatch,
   answer,
   index,
   numQuestions,
@@ -29,18 +26,16 @@ export default function ActiveQuizScreen({
 
       <Question
         question={question}
-        dispatch={dispatch}
         answer={answer}
         index={index}
         numQuestions={numQuestions}
       />
 
       <Footer>
-        <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
+        <Timer secondsRemaining={secondsRemaining} />
       </Footer>
 
       <NextButton
-        dispatch={dispatch}
         answer={answer}
         numQuestions={numQuestions}
         index={index}

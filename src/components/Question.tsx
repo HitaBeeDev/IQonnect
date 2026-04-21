@@ -1,10 +1,8 @@
-import type { Dispatch } from 'react'
-import type { OptionKey, Question as QuizQuestion, QuizAction } from '../types/quiz'
+import type { OptionKey, Question as QuizQuestion } from '../types/quiz'
 import Options from './Options'
 
 interface QuestionProps {
   question: QuizQuestion
-  dispatch: Dispatch<QuizAction>
   answer: OptionKey | null
   index: number
   numQuestions: number
@@ -12,7 +10,6 @@ interface QuestionProps {
 
 export default function Question({
   question,
-  dispatch,
   answer,
   index,
   numQuestions,
@@ -34,7 +31,6 @@ export default function Question({
 
       <Options
         question={question}
-        dispatch={dispatch}
         answer={answer}
         labelledBy={questionId}
       />

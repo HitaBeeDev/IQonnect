@@ -1,21 +1,20 @@
 import { useEffect, useRef } from 'react'
-import type { Dispatch } from 'react'
-import type { OptionKey, QuizAction } from '../types/quiz'
+import { useQuizDispatch } from '../hooks/useQuizDispatch'
+import type { OptionKey } from '../types/quiz'
 
 interface NextButtonProps {
-  dispatch: Dispatch<QuizAction>
   answer: OptionKey | null
   index: number
   numQuestions: number
 }
 
 export default function NextButton({
-  dispatch,
   answer,
   index,
   numQuestions,
 }: NextButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null)
+  const dispatch = useQuizDispatch()
 
   useEffect(() => {
     if (answer !== null) {
