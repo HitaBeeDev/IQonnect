@@ -20,7 +20,7 @@ export default function Options({ question, dispatch, answer }: OptionsProps) {
         <li key={key}>
           <button
             className={cn(
-              'flex min-h-[2.75rem] w-full items-center gap-3 rounded-md border border-[#929292] px-3 py-2 text-left text-sm leading-6 tracking-normal text-[#F5F5F5] transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6600] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2c2e30]',
+              'flex min-h-[2.75rem] w-full items-center gap-3 rounded-md border border-[#929292] px-3 py-2 text-left text-sm leading-6 tracking-normal text-[#F5F5F5] transition-all duration-500 focus-visible:ring-2 focus-visible:ring-[#FF6600] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2c2e30]',
               answer === key
                 ? 'border-[#FF6600] bg-[#929292] text-[#1D1F21]'
                 : '',
