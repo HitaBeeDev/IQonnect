@@ -24,7 +24,7 @@ export default function App() {
   const currentQuestion = questions[index]
 
   return (
-    <div className="flex min-h-screen items-start justify-center bg-[#09090e] px-3 py-4 md:items-center md:px-6 md:py-6">
+    <div className="flex min-h-screen min-w-[320px] items-start justify-center bg-[#09090e] px-3 py-4 antialiased [font-family:'Montserrat',Arial,sans-serif] md:items-center md:px-6 md:py-6">
       <div className="flex w-full max-w-[44rem] flex-col overflow-hidden rounded-2xl bg-[#0f0f17] p-4 ring-1 ring-white/[0.05] sm:p-6 md:p-10">
         <Header />
 

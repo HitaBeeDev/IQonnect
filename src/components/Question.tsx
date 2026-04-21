@@ -6,6 +6,7 @@ interface QuestionProps {
   answer: OptionKey | null
   index: number
   numQuestions: number
+  isLastQuestion: boolean
 }
 
 export default function Question({
@@ -13,6 +14,7 @@ export default function Question({
   answer,
   index,
   numQuestions,
+  isLastQuestion,
 }: QuestionProps) {
   const questionId = `question-${question.id}`
 
@@ -33,6 +35,7 @@ export default function Question({
         question={question}
         answer={answer}
         labelledBy={questionId}
+        isLastQuestion={isLastQuestion}
       />
     </div>
   )

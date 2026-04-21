@@ -1,5 +1,4 @@
 import Footer from './Footer'
-import NextButton from './NextButton'
 import Progress from './Progress'
 import Question from './Question'
 import Timer from './Timer'
@@ -37,6 +36,7 @@ export default function ActiveQuizScreen({
         answer={answer}
         index={index}
         numQuestions={numQuestions}
+        isLastQuestion={isLastQuestion}
       />
 
       <Footer>
@@ -45,11 +45,6 @@ export default function ActiveQuizScreen({
           formattedTime={formattedTime}
         />
       </Footer>
-
-      <NextButton
-        answer={answer}
-        isLastQuestion={isLastQuestion}
-      />
     </>
   )
 }

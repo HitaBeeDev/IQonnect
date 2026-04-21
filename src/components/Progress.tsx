@@ -1,10 +1,10 @@
 interface ProgressProps {
-  progressPercent: number
+  progressPercent: number;
 }
 
 export default function Progress({ progressPercent }: ProgressProps) {
   return (
-    <div className="mt-4 w-full">
+    <div className="w-full -mt-3">
       <div className="h-1 w-full overflow-hidden rounded-full bg-[#252538]">
         <div
           className="h-full rounded-full bg-[#8b5cf6]/70 transition-all duration-500 ease-in-out"
@@ -17,5 +17,5 @@ export default function Progress({ progressPercent }: ProgressProps) {
         />
       </div>
     </div>
-  )
+  );
 }

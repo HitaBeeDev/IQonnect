@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useQuizDispatch } from '../hooks/useQuizDispatch'
 import type {
   OptionKey,
@@ -10,15 +11,31 @@ interface OptionsProps {
   question: QuizQuestion
   answer: OptionKey | null
   labelledBy: string
+  isLastQuestion: boolean
 }
 
 export default function Options({
   question,
   answer,
   labelledBy,
+  isLastQuestion,
 }: OptionsProps) {
   const dispatch = useQuizDispatch()
   const selectedOptionText = answer === null ? null : question.options[answer].text
+
+  useEffect(() => {
+    if (answer === null) {
+      return
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      dispatch({ type: isLastQuestion ? 'finish' : 'nextQuestion' })
+    }, 250)
+
+    return () => {
+      window.clearTimeout(timeoutId)
+    }
+  }, [answer, dispatch, isLastQuestion])
 
   return (
     <>
