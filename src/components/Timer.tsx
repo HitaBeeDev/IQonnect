@@ -23,6 +23,9 @@ export default function Timer({ dispatch, secondsRemaining }: TimerProps) {
 
   return (
     <div
+      role="timer"
+      aria-live={isWarning ? 'assertive' : 'polite'}
+      aria-label={`Time remaining: ${formatTime(secondsRemaining)}`}
       className={cn(
         'mt-5 text-xs font-medium text-[#929292] transition-colors duration-300',
         isWarning ? 'text-[#ff9d32]' : '',

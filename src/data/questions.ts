@@ -58,33 +58,6 @@ export const questions = [
   {
     id: 3,
     question:
-      'You discover confidential information that a colleague is leaking sensitive data to a competitor. Reporting it may ruin their career but ignoring it risks the company. What do you do?',
-    options: {
-      a: {
-        text: 'Gather evidence and report the issue to upper management.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      b: {
-        text: 'Confront the colleague privately to understand their motives.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on the ethical implications before acting.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Ignore it to avoid damaging workplace relationships.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 4,
-    question:
       "You're managing a multicultural team, and cultural misunderstandings are causing tension. How do you address this?",
     options: {
       a: {
@@ -110,7 +83,7 @@ export const questions = [
     },
   },
   {
-    id: 5,
+    id: 4,
     question:
       "Your startup faces a moral dilemma: accepting funding from a controversial investor could secure long-term growth but harm your brand's ethical image. What is your decision?",
     options: {
@@ -137,7 +110,7 @@ export const questions = [
     },
   },
   {
-    id: 6,
+    id: 5,
     question:
       'Your team is divided over two equally strong strategies for a product launch. How do you proceed?',
     options: {
@@ -164,34 +137,7 @@ export const questions = [
     },
   },
   {
-    id: 7,
-    question:
-      'A close colleague is underperforming due to personal struggles, affecting the entire project. How do you handle it?',
-    options: {
-      a: {
-        text: 'Offer emotional support and adjust their workload temporarily.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      b: {
-        text: 'Reassign critical tasks to ensure the project stays on track.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on how you can help without crossing personal boundaries.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Ignore the issue to avoid getting involved in their personal life.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 8,
+    id: 6,
     question:
       'Your supervisor rejects your innovative idea without explanation. What do you do?',
     options: {
@@ -218,7 +164,7 @@ export const questions = [
     },
   },
   {
-    id: 9,
+    id: 7,
     question:
       "You're offered a leadership role, but it requires relocating far from your family. How do you decide?",
     options: {
@@ -245,7 +191,7 @@ export const questions = [
     },
   },
   {
-    id: 10,
+    id: 8,
     question:
       'Your company is transitioning to automation, risking job losses. As a leader, how do you handle employee concerns?',
     options: {
@@ -272,7 +218,7 @@ export const questions = [
     },
   },
   {
-    id: 11,
+    id: 9,
     question:
       'Your team is behind schedule, and management pressures you to meet the deadline, risking quality. What do you do?',
     options: {
@@ -299,7 +245,7 @@ export const questions = [
     },
   },
   {
-    id: 12,
+    id: 10,
     question:
       'You need to make a tough decision that could disappoint many people but is necessary for long-term success. How do you approach it?',
     options: {
@@ -326,34 +272,7 @@ export const questions = [
     },
   },
   {
-    id: 13,
-    question:
-      'A trusted employee is caught violating company policies. How do you handle it?',
-    options: {
-      a: {
-        text: 'Apply the same disciplinary action as for others.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      b: {
-        text: 'Talk to them privately to understand their reasoning.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on whether the rule they broke is fair.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Ignore the issue to avoid damaging the relationship.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 14,
+    id: 11,
     question:
       "You're offered an opportunity to work on a high-profile project, but you're unsure if you have the skills. What do you do?",
     options: {
@@ -380,7 +299,7 @@ export const questions = [
     },
   },
   {
-    id: 15,
+    id: 12,
     question:
       'You’re in a debate and realize your argument may be flawed. How do you respond?',
     options: {
@@ -407,115 +326,7 @@ export const questions = [
     },
   },
   {
-    id: 16,
-    question:
-      'Your company is launching a product that could harm a small competitor. What do you do?',
-    options: {
-      a: {
-        text: "Analyze the market to ensure it's a fair competition.",
-        intelligence: 'logical',
-        score: 3,
-      },
-      b: {
-        text: 'Discuss the ethical implications with your team.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on whether the product aligns with your values.',
-        intelligence: 'intrapersonal',
-        score: 3,
-      },
-      d: {
-        text: 'Ignore the impact and focus on maximizing profits.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 17,
-    question:
-      'A coworker is spreading false rumors about you. How do you handle it?',
-    options: {
-      a: {
-        text: 'Confront them calmly to resolve the issue.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      b: {
-        text: 'Report the behavior to management.',
-        intelligence: 'logical',
-        score: 2,
-      },
-      c: {
-        text: 'Reflect on whether addressing it is worth the conflict.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Ignore it and focus on your work.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 18,
-    question:
-      'You’re offered a lucrative job at a company known for unethical practices. What do you do?',
-    options: {
-      a: {
-        text: 'Decline the offer due to ethical concerns.',
-        intelligence: 'intrapersonal',
-        score: 3,
-      },
-      b: {
-        text: 'Accept and try to promote ethical practices from within.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      c: {
-        text: 'Analyze if the role directly involves unethical behavior.',
-        intelligence: 'logical',
-        score: 2,
-      },
-      d: {
-        text: 'Accept the offer without considering ethics.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 19,
-    question:
-      'You are leading a project, but your team is resistant to change. How do you encourage innovation?',
-    options: {
-      a: {
-        text: 'Present data showing how innovation leads to success.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      b: {
-        text: 'Create a safe space for brainstorming and idea-sharing.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on your leadership style to inspire change.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Implement changes without team input to speed up progress.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 20,
+    id: 13,
     question:
       'You make a mistake that negatively impacts a major client. What is your response?',
     options: {
@@ -542,169 +353,7 @@ export const questions = [
     },
   },
   {
-    id: 21,
-    question:
-      'You are tasked with leading a project in an unfamiliar field. How do you ensure its success?',
-    options: {
-      a: {
-        text: 'Conduct in-depth research and analyze past case studies.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      b: {
-        text: 'Collaborate with experts in the field for guidance.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on how to adapt your skills to the new challenge.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Delegate most tasks to experienced team members.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 22,
-    question:
-      'Two of your closest friends are in a serious conflict and want you to choose sides. How do you handle it?',
-    options: {
-      a: {
-        text: 'Mediate a conversation to help them resolve the conflict.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      b: {
-        text: 'Stay neutral and avoid getting involved.',
-        intelligence: 'logical',
-        score: 2,
-      },
-      c: {
-        text: "Reflect on which friend's perspective aligns more with your values.",
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Distance yourself from both to avoid tension.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 23,
-    question:
-      "You're offered a chance to work abroad, but your family is hesitant. What do you do?",
-    options: {
-      a: {
-        text: 'Discuss the pros and cons with your family to reach a joint decision.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      b: {
-        text: 'Analyze the career benefits and decide independently.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on how this move aligns with your life goals.',
-        intelligence: 'intrapersonal',
-        score: 3,
-      },
-      d: {
-        text: 'Decline the offer to avoid causing family discomfort.',
-        intelligence: 'emotional',
-        score: 2,
-      },
-    },
-  },
-  {
-    id: 24,
-    question:
-      'Your colleague is taking credit for your ideas in meetings. How do you respond?',
-    options: {
-      a: {
-        text: 'Address it calmly with the colleague in private.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      b: {
-        text: 'Gather evidence and report it to your supervisor.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on whether it’s worth addressing or letting go.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Start taking credit for their work in return.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 25,
-    question:
-      'You’re leading a project, but unexpected obstacles are causing delays. How do you handle the situation?',
-    options: {
-      a: {
-        text: 'Reassess the plan and develop a new strategy.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      b: {
-        text: 'Motivate the team and address concerns to boost morale.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on personal leadership improvements to adapt.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Ignore the problems and push the team to work harder.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 26,
-    question:
-      'You’re managing a project, and a team member consistently misses deadlines. How do you address this issue?',
-    options: {
-      a: {
-        text: 'Privately discuss the problem and offer support to improve.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      b: {
-        text: 'Reassign their tasks to more reliable team members.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on whether your management style contributes to the issue.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Publicly call out their behavior to pressure improvement.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 27,
+    id: 14,
     question:
       'A decision you made led to a significant failure in a project. How do you respond?',
     options: {
@@ -731,61 +380,7 @@ export const questions = [
     },
   },
   {
-    id: 28,
-    question:
-      'You notice a colleague is excluded from team activities. How do you handle it?',
-    options: {
-      a: {
-        text: 'Talk to the team about being more inclusive.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      b: {
-        text: 'Invite the colleague to join group activities yourself.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on why they might be excluded.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Ignore it; it’s their responsibility to fit in.',
-        intelligence: 'logical',
-        score: 1,
-      },
-    },
-  },
-  {
-    id: 29,
-    question:
-      'Your team disagrees on the best approach to solve a complex problem. What is your strategy?',
-    options: {
-      a: {
-        text: 'Facilitate a structured discussion to find common ground.',
-        intelligence: 'emotional',
-        score: 3,
-      },
-      b: {
-        text: 'Conduct a data-driven analysis to determine the best solution.',
-        intelligence: 'logical',
-        score: 3,
-      },
-      c: {
-        text: 'Reflect on which solution aligns best with your leadership style.',
-        intelligence: 'intrapersonal',
-        score: 2,
-      },
-      d: {
-        text: 'Choose the option with the most support and move forward.',
-        intelligence: 'logical',
-        score: 2,
-      },
-    },
-  },
-  {
-    id: 30,
+    id: 15,
     question:
       'You receive feedback that your communication style is too direct and off-putting. How do you handle it?',
     options: {

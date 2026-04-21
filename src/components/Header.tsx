@@ -1,10 +1,16 @@
 export default function Header() {
   return (
-    <header>
-      <p className="mt-3 text-md text-[#FFFFFF] font-normal tracking-wide text-lg">
-        <span className="font-medium text-xl">IQonnect</span>: Uncover Your
-        Boldest Intelligence
-      </p>
+    <header className="pb-4" aria-label="IQonnect">
+      <div className="mt-1">
+        <h1 className="text-2xl font-semibold tracking-[0.08em] text-[#FFFFFF]">
+          <span className="text-[#FF6600]">IQ</span>onnect
+        </h1>
+        <p className="mt-1 text-sm tracking-wide text-[#929292]">
+          Uncover Your Boldest Intelligence
+        </p>
+      </div>
+
+      <div className="mt-4 h-px w-full bg-[#444648]" />
     </header>
   )
 }

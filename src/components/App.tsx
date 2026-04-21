@@ -18,7 +18,7 @@ export default function App() {
       <div className="flex min-h-[calc(100vh-2rem)] w-full max-w-[40rem] flex-col overflow-hidden rounded-xl bg-[#2c2e30] p-4 shadow-lg sm:p-6 md:h-[35rem] md:min-h-0 md:w-[40rem] md:p-10">
         <Header />
 
-        <div className="mt-4 flex-1 min-h-0 overflow-y-auto pr-1">
+        <main className="mt-4 flex-1 min-h-0 overflow-y-auto pr-1">
           {status === 'ready' && (
             <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
           )}
@@ -35,6 +35,8 @@ export default function App() {
                 question={currentQuestion}
                 dispatch={dispatch}
                 answer={answer}
+                index={index}
+                numQuestions={numQuestions}
               />
 
               <Footer>
@@ -56,7 +58,7 @@ export default function App() {
           {status === 'finished' && (
             <FinishScreen dispatch={dispatch} scores={scores} />
           )}
-        </div>
+        </main>
       </div>
     </div>
   )

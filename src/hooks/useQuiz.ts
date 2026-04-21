@@ -3,7 +3,7 @@ import type { Reducer } from 'react'
 import { questions as quizQuestions } from '../data/questions'
 import type { QuizAction, QuizState } from '../types/quiz'
 
-const SECS_PER_QUESTION = 20
+export const SECS_PER_QUESTION = 40
 
 const initialState: QuizState = {
   questions: [],

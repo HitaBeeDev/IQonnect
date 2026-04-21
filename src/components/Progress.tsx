@@ -24,6 +24,11 @@ export default function Progress({
         <div
           className="h-full bg-[#FF6600]/70 transition-all duration-500 ease-in-out"
           style={{ width: `${progressPercentage}%` }}
+          role="progressbar"
+          aria-valuenow={progressPercentage}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label="Quiz progress"
         ></div>
       </div>
 
