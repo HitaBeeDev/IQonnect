@@ -27,7 +27,7 @@ export default function Timer({ dispatch, secondsRemaining }: TimerProps) {
       aria-live={isWarning ? 'assertive' : 'polite'}
       aria-label={`Time remaining: ${formatTime(secondsRemaining)}`}
       className={cn(
-        'mt-5 text-xs font-medium text-[#929292] transition-colors duration-300',
+        'mt-5 text-xs font-medium text-[#969696] transition-colors duration-300',
         isWarning ? 'text-[#ff9d32]' : '',
         isUrgent ? 'animate-soft-pulse text-[#ff5c5c]' : '',
       )}

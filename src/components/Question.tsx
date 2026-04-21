@@ -19,7 +19,7 @@ export default function Question({
 }: QuestionProps) {
   return (
     <div className="mt-3 flex flex-col items-center justify-center">
-      <p className="w-full text-xs font-semibold uppercase tracking-[0.16em] text-[#929292]">
+      <p className="w-full text-xs font-semibold uppercase tracking-[0.16em] text-[#969696]">
         Question {index + 1} / {numQuestions}
       </p>
 

@@ -56,7 +56,7 @@ export default function StartScreen({
             <Brain size={18} />
           </div>
           <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.16em] text-[#929292]">
+            <p className="text-[0.7rem] uppercase tracking-[0.16em] text-[#969696]">
               Total Questions
             </p>
             <p className="text-sm font-medium text-[#F5F5F5]">{numQuestions}</p>
@@ -68,7 +68,7 @@ export default function StartScreen({
             <Clock3 size={18} />
           </div>
           <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.16em] text-[#929292]">
+            <p className="text-[0.7rem] uppercase tracking-[0.16em] text-[#969696]">
               Duration
             </p>
             <p className="text-sm font-medium text-[#F5F5F5]">

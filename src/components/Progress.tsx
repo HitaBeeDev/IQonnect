@@ -32,7 +32,7 @@ export default function Progress({
         ></div>
       </div>
 
-      <p className="text-xs text-left text-[#929292] mt-2">
+      <p className="mt-2 text-left text-xs text-[#969696]">
         Question {index + 1} of {numQuestions}
       </p>
     </div>
