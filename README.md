@@ -1,6 +1,6 @@
 # IQonnect
 
-A small quiz app that identifies your dominant intelligence type — Logical, Emotional, or Intrapersonal — through 15 scenario-based questions.
+Answer 15 scenario-based questions and find out whether you lead with Logical, Emotional, or Intrapersonal intelligence.
 
 <p align="center">
   <img src="docs/assets/preview.png" alt="IQonnect app screenshot" width="800" />
@@ -13,6 +13,13 @@ A small quiz app that identifies your dominant intelligence type — Logical, Em
 | Lighthouse Performance | 99 |
 | Accessibility | 96 |
 | SEO | 100 |
+
+## Features
+
+- 15 scenario-based questions with a countdown timer
+- Tracks scores across Logical, Emotional, and Intrapersonal categories
+- Reveals your dominant intelligence type at the end
+- Keyboard accessible
 
 ## Tech Stack
 
