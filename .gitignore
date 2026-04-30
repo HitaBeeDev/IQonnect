@@ -3,6 +3,9 @@ PROJECT_OVERVIEW.md
 PROJECT_CHECKLIST.md
 CLAUDE.md
 
+# Claude Code local config
+.claude/
+
 # Logs
 logs
 *.log
